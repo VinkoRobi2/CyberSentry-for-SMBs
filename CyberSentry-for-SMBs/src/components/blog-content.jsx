@@ -1,6 +1,6 @@
 "use client"
 
-import { useLanguage } from "@/context/language-context"
+import { useLanguage } from "../context/language-context"
 import { Lock, Server, AlertTriangle, Users } from "lucide-react"
 import "../styles/blog-content.css"
 

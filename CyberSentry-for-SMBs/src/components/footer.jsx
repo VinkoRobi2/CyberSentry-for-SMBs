@@ -1,6 +1,6 @@
 "use client"
 
-import { useLanguage } from "@/context/language-context"
+import { useLanguage } from "../context/language-context"
 import { Shield, Mail, Phone, MapPin } from "lucide-react"
 import "../styles/footer.css"
 

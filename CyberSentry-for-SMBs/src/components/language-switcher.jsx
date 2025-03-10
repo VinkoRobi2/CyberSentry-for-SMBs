@@ -1,6 +1,6 @@
 "use client"
 
-import { useLanguage } from "@/context/language-context"
+import { useLanguage } from "../context/language-context"
 import { useState, useRef, useEffect } from "react"
 import "../styles/language-switcher.css"
 

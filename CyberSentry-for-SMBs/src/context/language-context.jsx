@@ -1,7 +1,7 @@
 "use client";
 
 import React, { createContext, useState, useContext, useEffect } from "react";
-import translations from "@/translations";
+import translations from "../translations/index";
 
 const LanguageContext = createContext(undefined);
 

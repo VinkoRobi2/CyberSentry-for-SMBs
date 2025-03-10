@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { useLanguage } from "@/context/language-context"
+import { useLanguage } from "../context/language-context"
 import LanguageSwitcher from "./language-switcher"
 import { Shield } from "lucide-react"
 import "../styles/header.css"
