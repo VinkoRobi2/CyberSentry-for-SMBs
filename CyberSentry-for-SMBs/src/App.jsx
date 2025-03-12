@@ -1,19 +1,21 @@
-import { useState, useEffect } from 'react'
-import Header from '../src/components/header'
-import BlogContent from '../src/components/blog-content'
-import Footer from '../src/components/footer'
-import { LanguageProvider } from '../src/context/language-context'
-import './App.css'
+import { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import BlogContent from './components/blog-content';
+import Footer from './components/footer';
+import { LanguageProvider } from './context/language-context';
+import RansomwareArticlePage from './blogs/RansomwareArticle'; // Asegúrate de que esta ruta sea la correcta
+import './App.css';
 
 function App() {
-  const [mounted, setMounted] = useState(false)
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
   if (!mounted) {
-    return null
+    return null;
   }
 
   return (
@@ -21,12 +23,15 @@ function App() {
       <div className="app-container">
         <Header />
         <main>
-          <BlogContent />
+          <Routes>
+            <Route path="/" element={<BlogContent />} />
+            <Route path="/ransomware-article" element={<RansomwareArticlePage />} />
+          </Routes>
         </main>
         <Footer />
       </div>
     </LanguageProvider>
-  )
+  );
 }
 
-export default App
+export default App;

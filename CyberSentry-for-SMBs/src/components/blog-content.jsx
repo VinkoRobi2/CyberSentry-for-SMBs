@@ -1,11 +1,17 @@
 "use client"
-
-import { useLanguage } from "../context/language-context"
-import { Lock, Server, AlertTriangle, Users } from "lucide-react"
-import "../styles/blog-content.css"
+import { useLanguage } from "../context/language-context";
+import { Lock, Server, AlertTriangle, Users } from "lucide-react";
+import { useNavigate } from "react-router-dom"; // Importa desde react-router-dom
+import "../styles/blog-content.css";
 
 export default function BlogContent() {
-  const { translations } = useLanguage()
+  const { translations } = useLanguage();
+  const navigate = useNavigate();
+
+  const handleReadFullArticle = () => {
+    console.log("Clicked")
+    navigate("/ransomware-article");
+  };
 
   return (
     <div className="blog-container">
@@ -19,7 +25,6 @@ export default function BlogContent() {
 
       <section className="blog-section">
         <h2>{translations.latestArticles}</h2>
-
         <div className="blog-grid">
           <article className="blog-card">
             <div className="blog-icon">
@@ -75,13 +80,12 @@ export default function BlogContent() {
             <h3>{translations.featuredTitle}</h3>
             <p>{translations.featuredExcerpt}</p>
             <p>{translations.featuredContent}</p>
-            <a href="#" className="read-more-btn">
+            <button onClick={handleReadFullArticle} className="read-more-btn">
               {translations.readFullArticle}
-            </a>
+            </button>
           </div>
         </div>
       </section>
     </div>
-  )
+  );
 }
-
